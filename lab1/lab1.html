@@ -58,22 +58,30 @@
 </div>
 
 <script>
+// Funkcja calculate() oblicza sumę, średnią, minimum i maksimum z wartości wpisanych w pola tekstowe
 function calculate() {
+    // Pobieramy wartości z pól tekstowych i konwertujemy je na liczby zmiennoprzecinkowe
     var value1 = parseFloat(document.getElementById('value1').value);
     var value2 = parseFloat(document.getElementById('value2').value);
     var value3 = parseFloat(document.getElementById('value3').value);
     var value4 = parseFloat(document.getElementById('value4').value);
 
+    // Obliczamy sumę wprowadzonych wartości
     var sum = value1 + value2 + value3 + value4;
+    // Obliczamy średnią z wprowadzonych wartości
     var average = sum / 4;
+    // Znajdujemy minimum z wprowadzonych wartości
     var min = Math.min(value1, value2, value3, value4);
+    // Znajdujemy maksimum z wprowadzonych wartości
     var max = Math.max(value1, value2, value3, value4);
 
+    // Wyświetlamy wyniki w elemencie o identyfikatorze 'result'
     document.getElementById('result').innerHTML = "Suma: " + sum + "<br>" +
                                                     "Średnia: " + average + "<br>" +
                                                     "Minimum: " + min + "<br>" +
                                                     "Maksimum: " + max;
 }
+
 </script>
 
 </body>
