@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drum Machine</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <audio id="s1" src="../sounds/clap.wav"></audio>
+    <audio id="s2" src="../sounds/boom.wav"></audio>
+    <audio id="s3" src="../sounds/ride.wav"></audio>
+    <audio id="s4" src="../sounds/tink.wav"></audio>
+
+    <div class="channel">
+        <button class="btn-record" onclick="startRecording('channel1')">Start </button>
+        <button class="btn-stop" onclick="stopRecording('channel1')">Stop </button>
+        <button class="btn-play" onclick="playChannel('channel1')">Play Channel 1</button>
+    </div>
+
+    <div class="channel">
+        <button class="btn-record" onclick="startRecording('channel2')">Start</button>
+        <button class="btn-stop" onclick="stopRecording('channel2')">Stop </button>
+        <button class="btn-play" onclick="playChannel('channel2')">Play Channel 2</button>
+    </div>
+
+    <div class="channel">
+        <button class="btn-record" onclick="startRecording('channel3')">Start </button>
+        <button class="btn-stop" onclick="stopRecording('channel3')">Stop </button>
+        <button class="btn-play" onclick="playChannel('channel3')">Play Channel 3</button>
+    </div>
+
+    <div class="channel">
+        <button class="btn-record" onclick="startRecording('channel4')">Start </button>
+        <button class="btn-stop" onclick="stopRecording('channel4')">Stop </button>
+        <button class="btn-play" onclick="playChannel('channel4')">Play Channel 4</button>
+    </div>
+
+    <button class="btn-play-all" onclick="playAllChannels()">Play All Channels</button>
+
+    <script src="drumkit.js"></script>
+</body>
+</html>

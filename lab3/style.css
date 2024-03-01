@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #34495e;
+    text-align: center;
+    color: #fff;
+}
+
+.channel {
+    margin: 20px auto;
+}
+
+button {
+    padding: 20px 40px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-record {
+    background-color: #3498db;
+}
+
+.btn-stop {
+    background-color: #e74c3c;
+}
+
+.btn-play {
+    background-color: #2ecc71;
+}
+
+.btn-play-all {
+    background-color: #f39c12;
+}
+
+button:hover {
+    opacity: 0.8;
+}
