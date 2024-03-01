@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Przeliczanie</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #result {
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <input type="number" id="value1" placeholder="Wartość 1">
+    <input type="number" id="value2" placeholder="Wartość 2">
+    <input type="number" id="value3" placeholder="Wartość 3">
+    <input type="number" id="value4" placeholder="Wartość 4">
+    <button onclick="calculate()">Przelicz</button>
+    <div id="result"></div>
+</div>
+
+<script>
+function calculate() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
+    var value4 = parseFloat(document.getElementById('value4').value);
+
+    var sum = value1 + value2 + value3 + value4;
+    var average = sum / 4;
+    var min = Math.min(value1, value2, value3, value4);
+    var max = Math.max(value1, value2, value3, value4);
+
+    document.getElementById('result').innerHTML = "Suma: " + sum + "<br>" +
+                                                    "Średnia: " + average + "<br>" +
+                                                    "Minimum: " + min + "<br>" +
+                                                    "Maksimum: " + max;
+}
+</script>
+
+</body>
+</html>
