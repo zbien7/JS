@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+  <div id="slider-container">
+    <div id="slider">
+      <div><img src="1.jpg" alt="Slide 1"></div>
+      <div><img src="2.jpg" alt="Slide 2"></div>
+      <div><img src="3.jpg" alt="Slide 3"></div>
+    </div>
+  </div>
+
+  <div id="dots-container">
+    <span class="slider-button" onclick="goToSlide(0)">Δ</span>
+    <span class="slider-button" onclick="goToSlide(1)">Δ</span>
+    <span class="slider-button" onclick="goToSlide(2)">Δ</span>
+  </div>
+
+  <div id="navigation">
+    <span class="slider-button2" onclick="prevSlide()">◄</span>
+    <span class="slider-button2" onclick="nextSlide()">►</span>
+  </div>
+
+  <script>
+    // Pobieramy referencje do slidera, jego slajdów oraz liczby slajdów
+const slider = document.getElementById("slider");
+const slides = slider.children;
+const numSlides = slides.length;
+let currentSlide = 0; // Inicjalizujemy zmienną przechowującą indeks aktualnego slajdu
+
+// Funkcja aktualizująca położenie slidera
+function updateSlider() {
+  // Ustawiamy przesunięcie slidera na podstawie aktualnego slajdu
+  slider.style.transform = `translateX(-${currentSlide * 300}px)`;
+}
+
+// Funkcja przechodzenia do następnego slajdu
+function nextSlide() {
+  // Ustawiamy indeks następnego slajdu, uwzględniając cykliczność
+  currentSlide = (currentSlide + 1) % numSlides;
+  // Aktualizujemy położenie slidera
+  updateSlider();
+}
+
+// Funkcja przechodzenia do poprzedniego slajdu
+function prevSlide() {
+  // Ustawiamy indeks poprzedniego slajdu, uwzględniając cykliczność
+  currentSlide = (currentSlide - 1 + numSlides) % numSlides;
+  // Aktualizujemy położenie slidera
+  updateSlider();
+}
+
+// Funkcja przechodzenia do konkretnego slajdu na podstawie indeksu
+function goToSlide(slideIndex) {
+  // Ustawiamy indeks aktualnego slajdu na podstawie otrzymanego indeksu
+  currentSlide = slideIndex;
+  // Aktualizujemy położenie slidera
+  updateSlider();
+}
+
+// Pobieramy referencje do kropek (wskaźników) slajdów i dodajemy nasłuchiwanie kliknięcia na każdą z nich
+const dots = document.getElementById("dots-container").children;
+for (let i = 0; i < dots.length; i++) {
+  dots[i].addEventListener("click", function () {
+    // Po kliknięciu na kropkę przechodzimy do odpowiedniego slajdu
+    goToSlide(i);
+  });
+}
+
+// Funkcja automatycznego przechodzenia do następnego slajdu co określony czas
+function autoSlide() {
+  nextSlide(); // Wywołujemy funkcję przechodzenia do następnego slajdu
+}
+
+// Ustawiamy interwał wywołujący funkcję autoSlide co 2500 milisekund (2,5 sekundy)
+setInterval(autoSlide, 2500); 
+  </script>
+</body>
+
+</html>
